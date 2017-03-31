@@ -45,7 +45,7 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1
   def destroy
     @usuario.destroy
-    redirect_to usuarios_url, notice: 'Usuario was successfully destroyed.'
+    render json: @usuario, status:204
   end
 
   private
