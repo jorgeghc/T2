@@ -1425,3 +1425,150 @@ app/controllers/usuarios_controller.rb:27:in `create'
   Rendering /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
   Rendered /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.4ms)
+Started GET "/" for 127.0.0.1 at 2017-03-31 16:51:45 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 23ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 16:54:09 -0300
+Processing by UsuariosController#create as JSON
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for "ji":String):
+  
+app/controllers/usuarios_controller.rb:59:in `usuario_params'
+app/controllers/usuarios_controller.rb:27:in `create'
+  Rendering /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/jorge/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.1ms)
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 17:01:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsuariosController#create as JSON
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: format
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 20:01:24 UTC], ["updated_at", 2017-03-31 20:01:24 UTC]]
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 201 Created in 68ms (Views: 10.0ms | ActiveRecord: 38.4ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 17:01:32 -0300
+Processing by UsuariosController#create as JSON
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+Can't verify CSRF token authenticity.
+Unpermitted parameters: id, format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 20:01:32 UTC], ["updated_at", 2017-03-31 20:01:32 UTC]]
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 201 Created in 25ms (Views: 2.0ms | ActiveRecord: 19.9ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 17:01:38 -0300
+Processing by UsuariosController#update as JSON
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: format, id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/usuarios/1
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/usuarios/1" for 127.0.0.1 at 2017-03-31 17:01:38 -0300
+Processing by UsuariosController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-31 17:01:58 -0300
+Processing by UsuariosController#index as JSON
+  Parameters: {"usuario"=>{}}
+  Rendering usuarios/index.json.jbuilder
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  Rendered usuarios/index.json.jbuilder (3.8ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 17:02:04 -0300
+Processing by UsuariosController#create as JSON
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+Can't verify CSRF token authenticity.
+Unpermitted parameters: id, format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 20:02:04 UTC], ["updated_at", 2017-03-31 20:02:04 UTC]]
+  [1m[35m (29.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 201 Created in 36ms (Views: 1.4ms | ActiveRecord: 30.4ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 17:02:10 -0300
+Processing by UsuariosController#create as JSON
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 20:02:10 UTC], ["updated_at", 2017-03-31 20:02:10 UTC]]
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 201 Created in 44ms (Views: 1.1ms | ActiveRecord: 39.1ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-31 17:02:18 -0300
+Processing by UsuariosController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-31 17:02:23 -0300
+Processing by UsuariosController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 17:02:28 -0300
+Processing by UsuariosController#update as JSON
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: format, id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/usuarios/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/usuarios/1" for 127.0.0.1 at 2017-03-31 17:02:28 -0300
+Processing by UsuariosController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
