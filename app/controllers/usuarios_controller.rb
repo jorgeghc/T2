@@ -24,12 +24,16 @@ class UsuariosController < ApplicationController
 
   # POST /usuarios
   def create
-    @usuario = Usuario.new(usuario_params)
-
-    if @usuario.save
-      render json: @usuario, status:201
+    if request.raw_post.include? '"id"'
+       render json: { "error": "No se puede crear usuario con id"}, :status => 400
     else
-      render json: @usuario.errors, status: :unprocessable_entity
+      @usuario = Usuario.new(usuario_params)
+
+      if @usuario.save
+        render json: @usuario, status:201
+      else
+        render json: @usuario.errors, status: :unprocessable_entity
+      end
     end
   end
 
