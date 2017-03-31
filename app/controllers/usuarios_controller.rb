@@ -29,7 +29,7 @@ class UsuariosController < ApplicationController
     if @usuario.save
       render json: @usuario, status:201
     else
-      render :new
+      render json: @usuario.errors, status: :unprocessable_entity
     end
   end
 
